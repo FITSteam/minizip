@@ -173,6 +173,8 @@ int32_t mz_zip_writer_is_open(void *handle);
 int32_t mz_zip_writer_open(void *handle, void *stream);
 /* Opens zip file from stream */
 
+int32_t mz_zip_writer_append(void *handle, void *stream);
+
 int32_t mz_zip_writer_open_file(void *handle, const char *path, int64_t disk_size, uint8_t append);
 /* Opens zip file from a file path */
 

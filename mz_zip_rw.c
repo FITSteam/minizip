@@ -1119,6 +1119,10 @@ int32_t mz_zip_writer_open(void *handle, void *stream) {
     return mz_zip_writer_open_int(handle, stream, MZ_OPEN_MODE_WRITE);
 }
 
+int32_t mz_zip_writer_append(void *handle, void *stream) {
+    return mz_zip_writer_open_int(handle, stream, MZ_OPEN_MODE_WRITE | MZ_OPEN_MODE_APPEND);
+}
+
 int32_t mz_zip_writer_open_file(void *handle, const char *path, int64_t disk_size, uint8_t append) {
     mz_zip_writer *writer = (mz_zip_writer *)handle;
     int32_t mode = MZ_OPEN_MODE_READWRITE;
